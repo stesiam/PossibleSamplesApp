@@ -1,5 +1,7 @@
 # PossibleSamplesApp
 
+You can see the app [here](https://stesiam.shinyapps.io/PossibleSamplesApp/)
+
 ## Description
 
 A simple Shiny App that counts possible samples for various sampling methods.
