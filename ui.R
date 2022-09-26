@@ -20,7 +20,12 @@ ui <- fluidPage(
                       "Stratified" = "stratified"
                     ),
                   selected = "srswor"
-      )  
+      ),
+      conditionalPanel(
+        condition = "input.method_sampling == 'srswor' || input.method_sampling == 'srswr' || input.method_sampling == 'systematic'",
+        numericInput(inputId = "population", label = "Population size", value = 20),
+        numericInput(inputId = "sample", label = "Sample size", value = 5)
+      ),
     ),
     id = "sidebar"),
     
