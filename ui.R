@@ -4,10 +4,11 @@ ui <- fluidPage(
   
   tags$div(
     titlePanel(title = "Possible Samples Calculator", windowTitle = "Possible Samples"),
-    class = "title"
+    id = "title"
   ),
   
   sidebarLayout(
+    tags$div(
     sidebarPanel(
       br(),
       selectInput(inputId = "method_sampling",
@@ -21,9 +22,9 @@ ui <- fluidPage(
                   selected = "srswor"
       )  
     ),
+    id = "sidebar"),
     
     mainPanel(
-      tags$h3("Possible Samples")
     )
   )
   
