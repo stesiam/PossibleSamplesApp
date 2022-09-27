@@ -41,7 +41,7 @@ jobs:
       - name: Setup lintr
         uses: r-lib/actions/setup-r-dependencies@4e1feaf90520ec1215d1882fdddfe3411c08e492
         with:
-          extra-packages: lintr
+          extra-packages: lintr, shiny
 
       - name: Run lintr
         run: lintr::sarif_output(lintr::lint_dir("."), "lintr-results.sarif")
