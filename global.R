@@ -21,7 +21,7 @@ possible_samples_systematic <- function(N,n){
 
 possible_samples_strata <- function(k,N1,n1,N2,n2,N3,n3,N4,n4){
   if(k==1){
-    result = possible_samples_srswor(N,n)
+    result = possible_samples_srswor(N1,n1)
   }
   else if(k==2){
     result = possible_samples_srswor(N1,n1) * possible_samples_srswor(N2,n2)
