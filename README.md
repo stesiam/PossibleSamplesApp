@@ -1,5 +1,7 @@
 # PossibleSamplesApp
 
+[![lintr](https://github.com/stesiam/PossibleSamplesApp/actions/workflows/lintr.yml/badge.svg?branch=main)](https://github.com/stesiam/PossibleSamplesApp/actions/workflows/lintr.yml)
+
 You can see the app [here](https://stesiam.shinyapps.io/PossibleSamplesApp/)
 
 ## Description
