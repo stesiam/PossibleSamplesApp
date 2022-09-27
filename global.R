@@ -1,6 +1,7 @@
 # Import libraries
 
 library(shiny)
+library(badger)
 
 # Custom functions
 

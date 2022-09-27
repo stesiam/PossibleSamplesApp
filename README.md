@@ -1,6 +1,6 @@
 # PossibleSamplesApp
 
-[![lintr](https://github.com/stesiam/PossibleSamplesApp/actions/workflows/lintr.yml/badge.svg?branch=main)](https://github.com/stesiam/PossibleSamplesApp/actions/workflows/lintr.yml)
+`r badge_last_commit("stesiam/PossibleSamplesApp")`
 
 You can see the app [here](https://stesiam.shinyapps.io/PossibleSamplesApp/)
 
