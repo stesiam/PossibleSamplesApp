@@ -38,6 +38,18 @@ ui <- fluidPage(
     id = "sidebar"),
     
     mainPanel(
+      conditionalPanel(
+        condition = "input.method_sampling == 'srswor'",
+        verbatimTextOutput("num_srswor")
+      ),
+      conditionalPanel(
+        condition = "input.method_sampling == 'srswr'",
+        verbatimTextOutput("num_srswr")
+      ),
+      conditionalPanel(
+        condition = "input.method_sampling == 'systematic'",
+        verbatimTextOutput("num_sys")
+      ),
     )
   )
   
