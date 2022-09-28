@@ -1,7 +1,5 @@
 # PossibleSamplesApp
 
-`r badge_last_commit("stesiam/PossibleSamplesApp")`
-
 You can see the app [here](https://stesiam.shinyapps.io/PossibleSamplesApp/)
 
 ## Description
