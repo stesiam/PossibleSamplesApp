@@ -10,3 +10,11 @@
   font-family: monospace;
   text-align: center;
 }
+
+.results pre{
+  background-color: white;
+  font-weight: bold;
+  font-size: 70px;
+  text-align: center;
+  height: 50%;
+}
