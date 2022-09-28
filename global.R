@@ -35,3 +35,7 @@ possible_samples_strata <- function(k,N1,n1,N2,n2,N3,n3,N4,n4){
   }
   return(result)
 }
+
+sep_big_num <- function(number){
+  prettyNum(number, big.mark = ",", scientific = FALSE)
+}
