@@ -1,7 +1,7 @@
 # Import libraries
 
 library(shiny)
-library(badger)
+#library(badger)
 
 # Custom functions
 
@@ -20,7 +20,7 @@ possible_samples_systematic <- function(N,n){
   return(result)
 }
 
-possible_samples_strata <- function(k,N1,n1,N2,n2,N3,n3,N4,n4){
+possible_samples_strata <- function(k, N1, n1, ...){
   if(k==1){
     result = possible_samples_srswor(N1,n1)
   }

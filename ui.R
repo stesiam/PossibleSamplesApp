@@ -1,6 +1,8 @@
 ui <- fluidPage(
   includeCSS("www/custom.css"),
   
+  withMathJax(),
+  
   tags$div(
     titlePanel(title = "Possible Samples Calculator", windowTitle = "Possible Samples"),
     id = "title"
@@ -45,22 +47,7 @@ ui <- fluidPage(
           step = 1,
           value = 1
         ),
-        fluidRow(column(
-          6,
-          numericInput(
-            inputId = "N1",
-            label = "N_1",
-            value = 20
-          )
-        ),
-        column(
-          6,
-          numericInput(
-            inputId = "n1",
-            label = "n_1",
-            value = 20
-          )
-        ))
+        uiOutput("inputGroup")
       ),
     ),
     id = "sidebar"
@@ -70,12 +57,13 @@ ui <- fluidPage(
     tags$div(
       conditionalPanel(condition = "input.method_sampling == 'srswor'",
                        verbatimTextOutput("num_srswor")),
-      
       conditionalPanel(condition = "input.method_sampling == 'srswr'",
                        verbatimTextOutput("num_srswr")),
       conditionalPanel(condition = "input.method_sampling == 'systematic'",
                        verbatimTextOutput("num_sys")),
-      class = "results"),
+      conditionalPanel(condition = "input.method_sampling == 'strata'",
+                       verbatimTextOutput("num_strata")),
+      class = "results")
     
    ) # end mainPanel) # end sidebarlayout
 
