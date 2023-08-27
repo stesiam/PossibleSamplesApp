@@ -61,7 +61,7 @@ ui <- fluidPage(
                        verbatimTextOutput("num_srswr")),
       conditionalPanel(condition = "input.method_sampling == 'systematic'",
                        verbatimTextOutput("num_sys")),
-      conditionalPanel(condition = "input.method_sampling == 'strata'",
+      conditionalPanel(condition = "input.method_sampling == 'stratified'",
                        verbatimTextOutput("num_strata")),
       class = "results")
     

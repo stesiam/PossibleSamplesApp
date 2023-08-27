@@ -11,18 +11,31 @@ server <- function(input, output) {
     output$inputGroup = renderUI({
       input_list <- lapply(1:input$strata, function(i) {
         # for each dynamically generated input, give a different name
-        inputNamePop <- paste("N", i, sep = "")
-        inputNameSample <- paste("n", i, sep = "")
+        Np <- paste("N", i, sep = "")
+        ns <- paste("n", i, sep = "")
         fluidRow(
-          column(6,
-          numericInput(inputNamePop, inputNamePop, 20)
+          column(1, 
+                 paste0("Strata", i)),
+          column(5,
+               numericInput(Np, Np, 20)
         ),
-        column(6,
-               numericInput(inputNameSample, inputNameSample, 20)
+        column(5,
+               numericInput(ns, ns, 10)
         )
         )
       })
       do.call(tagList, input_list)
     })
   })
+ 
+output$num_strata = renderText({
+  num_pairs <- input$strata
+  input_values <- sapply(1:num_pairs, function(i) {
+    N <- input[[paste0("N", i)]]
+    n <- input[[paste0("n", i)]]
+    possible_samples_srswor(N, n)
+  })
+  prod(as.numeric(input_values))
+})
+
 }
