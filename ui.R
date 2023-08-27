@@ -1,56 +1,48 @@
-ui <- fluidPage(
+ui <- page_sidebar(
   includeCSS("www/custom.css"),
   
-  withMathJax(),
+  title = "Possible Samples Calculator",
+  windowTitle = "Possible Samples", 
   
-  tags$div(
-    titlePanel(title = "Possible Samples Calculator", windowTitle = "Possible Samples"),
-    id = "title"
-  ),
-  
-  sidebarLayout(tags$div(
-    sidebarPanel(
-      width = 4,
-      br(),
-      selectInput(
-        inputId = "method_sampling",
-        label = "Choose your sampling method",
-        choices =
-          c(
-            "SRSWOR" = "srswor",
-            "SRSWR" = "srswr",
-            "Systematic" = "systematic",
-            "Stratified" = "stratified"
-          ),
-        selected = "srswor"
-      ),
-      conditionalPanel(
-        condition = "input.method_sampling == 'srswor' || input.method_sampling == 'srswr' || input.method_sampling == 'systematic'",
-        numericInput(
-          inputId = "population",
-          label = "Population size",
-          value = 20
+  sidebar = sidebar(
+    width = 350,
+    selectInput(
+      inputId = "method_sampling",
+      label = "Choose your sampling method",
+      choices =
+        c(
+          "SRSWOR" = "srswor",
+          "SRSWR" = "srswr",
+          "Systematic" = "systematic",
+          "Stratified" = "stratified"
         ),
-        numericInput(
-          inputId = "sample",
-          label = "Sample size",
-          value = 5
-        )
-      ),
-      conditionalPanel(
-        condition = "input.method_sampling == 'stratified'",
-        sliderInput(
-          inputId = "strata",
-          label = "Number of Strata",
-          min = 1,
-          max = 4,
-          step = 1,
-          value = 1
-        ),
-        uiOutput("inputGroup")
-      ),
+      selected = "srswor"
     ),
-    id = "sidebar"
+    conditionalPanel(
+      condition = "input.method_sampling == 'srswor' || input.method_sampling == 'srswr' || input.method_sampling == 'systematic'",
+      numericInput(
+        inputId = "population",
+        label = "Population size",
+        value = 20
+      ),
+      numericInput(
+        inputId = "sample",
+        label = "Sample size",
+        value = 5
+      )
+    ),
+    conditionalPanel(
+      condition = "input.method_sampling == 'stratified'",
+      sliderInput(
+        inputId = "strata",
+        label = "Number of Strata",
+        min = 1,
+        max = 4,
+        step = 1,
+        value = 1
+      ),
+      uiOutput("inputGroup")
+    ),
   ),
   
   mainPanel(
@@ -65,8 +57,6 @@ ui <- fluidPage(
                        verbatimTextOutput("num_strata")),
       class = "results")
     
-   ) # end mainPanel) # end sidebarlayout
-
   ) # end sidebarLayout 
   
 ) # end fluidPage

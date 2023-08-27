@@ -1,20 +1,21 @@
-#title{
-  font-size: 25px;
-  font-family: monospace;
-  text-align: center;
-  height: 70px;
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
+
+*{
+    font-family: 'Dhurjati', sans-serif;
+    text-align: center;
+    font-size: 14px;
 }
 
-#sidebar{
-  font-size: 14px;
-  font-family: monospace;
-  text-align: center;
+label{
+  font-size: 15px;
 }
+
 
 .results pre{
   background-color: white;
   font-weight: bold;
   font-size: 70px;
   text-align: center;
-  height: 50%;
+  width: 100%;
 }
+
