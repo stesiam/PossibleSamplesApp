@@ -18,4 +18,4 @@ jobs:
       run: |
         echo "${{ secrets.DOCKERPW }}" | docker login -u "stesiam" --password-stdin
         docker build . --file Dockerfile --tag stesiam/possible-samples-app:$(date +%s)
-        docker push stesiam/possible-samples-app
+        docker push stesiam/possible-samples-app:$(date +%s)
