@@ -1,5 +1,7 @@
 # PossibleSamplesApp
 
+[![Docker Image CI](https://github.com/stesiam/PossibleSamplesApp/actions/workflows/docker-image.yml/badge.svg)](https://github.com/stesiam/PossibleSamplesApp/actions/workflows/docker-image.yml)
+
 You can see the app [here](https://stesiam.shinyapps.io/PossibleSamplesApp/)
 
 ## Description
